@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Audio Visualizer Electron</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; script-src 'self';">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="stage">
+<canvas id="visualizerCanvas"></canvas>
+<div class="ui-panel" id="controlPanel">
+  <div class="row">
+    <label for="inputSelect">Fuente de audio:</label>
+    <select id="inputSelect"><option value="">(Micrófono / default)</option></select>
+  </div>
+  <div class="row two-col">
+    <div class="col">
+      <label for="styleSelect">Estilo visual:</label>
+      <select id="styleSelect">
+        <optgroup label="Clásicos">
+          <option value="bars">Barras</option>
+          <option value="mirror">Barras espejo</option>
+          <option value="radial">Radial</option>
+          <option value="wave">Onda</option>
+          <option value="particles">Partículas</option>
+        </optgroup>
+        <optgroup label="Pro">
+          <option value="barsRounded">Barras redondeadas</option>
+          <option value="radialFilled">Radial relleno</option>
+          <option value="dualWave">Doble onda</option>
+          <option value="orbits">Órbitas</option>
+          <option value="tunnel">Túnel (historia)</option>
+        </optgroup>
+        <optgroup label="Wow">
+          <option value="spiral">Espiral</option>
+          <option value="mountains">Cordillera</option>
+          <option value="gridBeam">Grid Láser</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="col">
+      <label for="colorSelect">Paleta:</label>
+      <select id="colorSelect">
+        <option value="neon">Neón verde</option>
+        <option value="fire">Fuego cálido</option>
+        <option value="ice">Hielo azul</option>
+        <option value="rainbow">Arcoíris</option>
+        <option value="mono">Monocromo</option>
+      </select>
+    </div>
+  </div>
+  <div class="row buttons">
+    <button id="btnStart">Start</button><button id="btnStop" disabled>Stop</button><button id="btnFullscreen">Fullscreen</button>
+  </div>
+  <div class="row note"><p>
+    Tips:
+    <br/>• Tornamesa → preamp → interfaz USB → PC.
+    <br/>• macOS: Multi-Output (Scarlett + BlackHole).
+    <br/>• Windows: VB-Cable / VoiceMeeter.
+    <br/>• Fullscreen para modo living/TV (mueve el mouse para ver panel).
+  </p></div>
+</div>
+</div>
+<script src="renderer.js"></script>
+</body></html>
